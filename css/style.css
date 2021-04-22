@@ -6,6 +6,7 @@ a{
     text-decoration: none;
     color: black;
 }
+
 body{
     background-color: #373737;
     margin: 0;
@@ -25,6 +26,7 @@ body{
     padding-right: 10px;
 }
 .links{
+    min-width: 25rem;
     max-width: 25rem;
     width: fit-content;
     height: fit-content;
@@ -36,6 +38,9 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+.links H1{
+    border-bottom: black 3px dotted;
 }
 
 .btn{
@@ -62,9 +67,15 @@ body{
     border-radius: 0.25rem;
     padding: 5PX;
     margin: 5px 0;
-    align-items: center;
     transition: .3s ease;
     cursor: pointer;
+}
+.sub-btn{
+    margin-top: 5px;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
 }
 .submenu:hover{
     background-color: rgb(85, 84, 84);
@@ -141,9 +152,6 @@ body{
     }
     .submenu{
         max-width: 80vw;
-    }
-    .submenu div{
-        margin: 0;
     }
     .sub-btn{
         flex-direction: column;
