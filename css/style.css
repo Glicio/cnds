@@ -11,6 +11,7 @@ body{
     margin: 0;
     padding: 0;
     align-content: center;
+    min-width: 400px;
 }
 .container{
     margin: 0;
@@ -128,6 +129,7 @@ body{
         border-radius: 0;
         width: 100%;
         margin: 0;
+        padding: 0;
         justify-content: center;
         align-items: center;
     }
@@ -135,16 +137,20 @@ body{
         margin: 0;
         padding: 0;
         width: 100%;
+        max-width: 100%;
     }
     .submenu{
-        width: 85vw;
-        max-width: 85vw;
+        max-width: 80vw;
+    }
+    .submenu div{
+        margin: 0;
     }
     .sub-btn{
         flex-direction: column;
     }
     .sub-btn a{
         margin: 5px 0;
+        max-width: 50vw;
     }
     .btn{
         width: 85vw;
