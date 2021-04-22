@@ -122,3 +122,32 @@ body{
     left: 53%;
     opacity: 1;
 }
+@media (max-width: 600px){
+    .links{
+        max-width: 100%;
+        border-radius: 0;
+        width: 100%;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    .submenu{
+        width: 85vw;
+        max-width: 85vw;
+    }
+    .sub-btn{
+        flex-direction: column;
+    }
+    .sub-btn a{
+        margin: 5px 0;
+    }
+    .btn{
+        width: 85vw;
+    }
+    
+}
