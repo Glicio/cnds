@@ -19,27 +19,39 @@ var formatter = new Intl.NumberFormat('pt-br', {
 function formatarNumero(el){
     valor = el.target.value
     valor = valor.replace(".","")
+    for(let i=0; i<valor.length; i++){
+
+        if(valor.charAt(i) == "0" && valor.length > 4){
+            valor = valor.substring(i+1,valor.length);
+            break;
+        }
+        else{
+            break;
+        }
+    }
     vl = valor.length
-    valor = valor.substring(0, valor.length-2)+"."+valor.substring(valor.length-2,valor.length);
+    if(vl < 4){
+        valor = "0"+valor.substring(0, valor.length-2)+"."+valor.substring(valor.length-2,valor.length);
+    }else{
+        valor = valor.substring(0, valor.length-2)+"."+valor.substring(valor.length-2,valor.length);
+    }
     el.target.value = valor;
 }
 function checkNumero(e){
     //console.log(e.key == "Backspace");
     if(!/^([0-9])$/.test(e.key) && e.key != "Backspace" && e.key !="Tab" && e.key !="Enter"){
-        console.log("FALSE");
         e.preventDefault();
         return false;
     }
 }
 function valorValidate(e){
-    console.log(e.target.value.length);
     if(e.target.value.length > 1 && e.key != "Backspace" && e.key != "Tab"){
         e.preventDefault();
         return false;
     }
 }
 function nextInput(e){
-    if(e.target.value.length == 2){
+    if(e.target.value.length == 2 || e.target.value == "f" || e.target.value == "d"){
         valorInput.focus();
     }
 }
@@ -69,13 +81,26 @@ function getFormData(){
 function insertData(data){
     table = document.getElementById("list").getElementsByTagName("tbody")[0];
         newrow = table.insertRow(table.length);
+        switch(data.tipo){
+            case "ex":
+                newrow.setAttribute("style", "background-color: hsla(37, 78%, 33%, 0.36)");
+                break;
+            case "f":
+                newrow.setAttribute("style", "background-color: hsla(360, 78%, 33%, 0.54)");
+                break;
+            case "d":
+                newrow.setAttribute("style", "background-color:hsla(212, 15%, 33%, 0.54)");
+                break;
+        }
+        
         cell1 = newrow.insertCell(0);
         cell1.innerHTML = data.tipo;
         cell2 = newrow.insertCell(1);
         cell2.innerHTML = data.valor;
         cell3 = newrow.insertCell(2);
-        cell3.innerHTML = '<a onClick="onEdit(this)">Editar</a><a onClick="onRemove(this)">Remover</a>'
+        cell3.innerHTML = '<a onClick="onEdit(this)">Editar</a><a onClick="onRemove(this)">Remover</a>';
         atualizarResultado();
+        sortTable();
 }
 function atualizarResultado(){
     table = document.getElementById("list").getElementsByTagName("tbody")[0];
@@ -124,7 +149,7 @@ function atualizarResultado(){
                 descontos += parseFloat(table.rows[i].cells[1].innerText);
         }
     }
-    let liquidoPago = salarios+extra+insalubridade+gratificacoes+quinquenio+decimo+outros-descontos;
+    let liquidoPago = salarios+insalubridade+extra+gratificacoes+quinquenio+decimo+outros-descontos;
     resultado.rows[0].cells[1].innerText = formatter.format(salarios.toFixed(2));
     resultado.rows[1].cells[1].innerText = formatter.format(insalubridade.toFixed(2)); 
     resultado.rows[2].cells[1].innerText = formatter.format(gratificacoes.toFixed(2)); 
@@ -176,3 +201,37 @@ function onRemove(row){
     row.parentElement.removeChild(row)
     atualizarResultado();
 }
+function sortTable() {
+    var table, rows, switching, i, x, y, shouldSwitch;
+    table = document.getElementById("list");
+    switching = true;
+    /* Make a loop that will continue until
+    no switching has been done: */
+    while (switching) {
+      // Start by saying: no switching is done:
+      switching = false;
+      rows = table.rows;
+      /* Loop through all table rows (except the
+      first, which contains table headers): */
+      for (i = 1; i < (rows.length - 1); i++) {
+        // Start by saying there should be no switching:
+        shouldSwitch = false;
+        /* Get the two elements you want to compare,
+        one from current row and one from the next: */
+        x = rows[i].getElementsByTagName("TD")[0];
+        y = rows[i + 1].getElementsByTagName("TD")[0];
+        // Check if the two rows should switch place:
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          // If so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      }
+      if (shouldSwitch) {
+        /* If a switch has been marked, make the switch
+        and mark that a switch has been done: */
+        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+        switching = true;
+      }
+    }
+  }
