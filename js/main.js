@@ -124,7 +124,7 @@ function atualizarResultado(){
                 descontos += parseFloat(table.rows[i].cells[1].innerText);
         }
     }
-    let liquidoPago = salarios+insalubridade+gratificacoes+quinquenio+decimo+outros-descontos;
+    let liquidoPago = salarios+extra+insalubridade+gratificacoes+quinquenio+decimo+outros-descontos;
     resultado.rows[0].cells[1].innerText = formatter.format(salarios.toFixed(2));
     resultado.rows[1].cells[1].innerText = formatter.format(insalubridade.toFixed(2)); 
     resultado.rows[2].cells[1].innerText = formatter.format(gratificacoes.toFixed(2)); 
