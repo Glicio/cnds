@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/links.css">
+    <title>Links uteis</title>
 </head>
+
 <body>
     <nav class="header">
         <a href="#"><img src="rsc/timbre.png" alt="Logo" width="70" height="50"></a>
@@ -17,64 +21,79 @@
             <a href="/index.html" class="btn"><img src="rsc/certidao.svg" alt="Bransão de Alagoas" width="24" height="24" class="icon"><span>Emitir certidões</span></a>
         </div>
     </nav>
-    <div class="links">
-        <h1>CERTIDÕES</h1>
-        <a class="btn" href="http://contribuinte.sefaz.al.gov.br/certidao/" target="_blank">
-            <img src="rsc/brasao_alagoas-463630d216.png" alt="Bransão de Alagoas" width="50" height="50" class="icon">
-            <span>Certidão estadual: Alagoas</span>
-        </a>
-        <a href="https://consulta-crf.caixa.gov.br/consultacrf/pages/consultaEmpregador.jsf" target="_blank" class="btn">
-            <img src="rsc/caixa.svg" alt="Bransão de Alagoas" width="50" height="50" class="icon">
-            <span>Certificado de Regularidade do FGTS - CRF</span>
-        </a>
-
-        <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank" class="btn">
-            <img src="rsc/tst.png" alt="Bransão de Alagoas" width="50" height="50" class="icon">
-            <span>Certidão Negativa de Débitos Trabalhistas</span>
-        </a>
-        <a href="http://www.maceio.al.gov.br/semec/emissao-de-certidoes/" target="_blank" class="btn">
-            <img src="rsc/maceio.png" alt="Bransão de Alagoas" width="50" height="50" class="icon">
-            <span>Certidão Negativa de Débitos da Prefeitura de Maceió</span>
-        </a>
-        <a href="https://arapiraca.abaco.com.br/eagata/portal/" target="_blank" class="btn">
-            <img src="rsc/arapiraca.svg" alt="Bransão de Alagoas" width="50" height="50" class="icon">
-            <span>Certidão Negativa de Débitos da Prefeitura de Arapiraca</span>
-        </a>
-        <button class="submenu">
-            <div>
-                <img src="rsc/receita_federal.png" alt="Bransão de Alagoas" width="50" height="50" class="icon">
-                <span>Certidão de Débitos Relativos a Créditos Tributários Federais e à Dívida Ativa da União</span>
+    <div class="container">
+        <div class="links" id="certidoes">
+            <h1 class="titulo">Certidões</h1>
+            <div class="menus">
+                <button class="btn" id="btn-pf">
+                    <div class="info-btn">
+                        <img src="rsc/pessoa.svg" alt="pessoa" width="25" height="25" class="icon">
+                        <span>Pessoa Física</span>
+                    </div>
+                </button>
+                <button class='btn'>
+                    <div class="info-btn" id="btn-pj">
+                        <img src="rsc/jurid.svg" alt="Juridica" width="25" height="25" class="icon">
+                        <span>Pessoa Jurídica</span>
+                    </div>
+                </button>
             </div>
-            <div class="sub-btn">      
-                <a href="https://servicos.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/Consultar" target="_blank" class="btn">        
-                    <span>Certidão de Pessoa Jurídica</span>
+
+            <div class="pf" data-ativado="false" id="pf">
+                <a class="btn" href="http://contribuinte.sefaz.al.gov.br/certidao/" target="_blank">
+                    <img src="rsc/brasao_alagoas-463630d216.png" alt="Bransão de Alagoas" width="50" height="50" class="icon">
+                    <span>Certidão estadual: Alagoas</span>
+                </a>
+                <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank" class="btn">
+                    <img src="rsc/tst.png" alt="Bransão de Alagoas" width="50" height="50" class="icon">
+                    <span>Certidão Negativa de Débitos Trabalhistas</span>
                 </a>
                 <a href="http://servicos.receita.fazenda.gov.br/Servicos/certidao/CNDConjuntaInter/InformaNICertidao.asp?tipo=2" target="_blank" class="btn">
+                    <img src="rsc/receita_federal.png" alt="Bransão de Alagoas" width="50" height="50" class="icon">
                     <span>Certidão de Pessoa Física</span>
                 </a>
             </div>
-        </button>
-    </div>
-    <div class="links">
-        <h1>Sistemas</h1>
-        <button class="submenu">
-            <div>
-                <img src="rsc/Contabilis.ico" alt="Bransão de Alagoas" width="50" height="50" class="icon">
-                <span>Contabilis</span>
-            </div>
-            <div class="sub-btn">      
-                <a href="https://3tecnos.com.br/download/9135/" target="_blank" class="btn">        
-                    <span>Baixar Contabilis</span>
+
+            <div class="pj" id="pj" data-ativado="false">
+                <a class="btn" href="http://contribuinte.sefaz.al.gov.br/certidao/" target="_blank">
+                    <img src="rsc/brasao_alagoas-463630d216.png" alt="Bransão de Alagoas" width="50" height="50" class="icon">
+                    <span>Certidão estadual: Alagoas</span>
                 </a>
-                <a href="https://3tecnos.com.br/download/9165/" target="_blank" class="btn">
-                    <span> Baixar Up3</span>
+                <a href="https://consulta-crf.caixa.gov.br/consultacrf/pages/consultaEmpregador.jsf" target="_blank" class="btn">
+                    <img src="rsc/caixa.svg" alt="Bransão de Alagoas" width="50" height="50" class="icon">
+                    <span>Certificado de Regularidade do FGTS - CRF</span>
                 </a>
-                <a href="#" class="btn"><span>Ajuda</span> <img src="rsc/info_black_24dp.svg" width="16" height="16"></a>
+                <a href="https://cndt-certidao.tst.jus.br/inicio.faces" target="_blank" class="btn">
+                    <img src="rsc/tst.png" alt="Bransão de Alagoas" width="50" height="50" class="icon">
+                    <span>Certidão Negativa de Débitos Trabalhistas</span>
+                </a>
+                <a href="http://www.maceio.al.gov.br/semec/emissao-de-certidoes/" target="_blank" class="btn">
+                    <img src="rsc/maceio.png" alt="Bransão de Alagoas" width="50" height="50" class="icon">
+                    <span>Certidão Negativa de Débitos da Prefeitura de Maceió</span>
+                </a>
+                <a href="https://arapiraca.abaco.com.br/eagata/portal/" target="_blank" class="btn">
+                    <img src="rsc/arapiraca.svg" alt="Bransão de Alagoas" width="50" height="50" class="icon">
+                    <span>Certidão Negativa de Débitos da Prefeitura de Arapiraca</span>
+                </a>
+                <a href="https://servicos.receita.fazenda.gov.br/Servicos/CertidaoInternet/PJ/Consultar" target="_blank" class="btn">        
+                    <img src="rsc/receita_federal.png" alt="Bransão de Alagoas" width="50" height="50" class="icon">
+                    <span>Certidão de Pessoa Jurídica</span>
+                </a>
             </div>
-        </button>
+        </div>
+        <div class="links" id="outros-links">
+            <h1 class="titulo">Outros links</h1>
+            <a href="https://drive.google.com/file/d/19cHIC3TfOBqVh8Y13imAHx6nrdSXVYdT/view?usp=sharing" class="btn" target="_blank">
+                <img src="rsc/folha.svg" alt="certidao" width="24" height="24" class="icon">
+                <span>Portaria 488 de 2002</span>
+            </a>
+            <a href=" https://3tecnos.com.br/downloads/" class="btn" target="_blank">
+                <img src="rsc/Contabilis.ico" alt="certidao" width="24" height="24" class="icon">
+                <span>Download do Sistema</span>
+            </a>
+               
+        </div>
     </div>
+    <script src="js/links.js"></script>
 </body>
-<footer>
-    <p>Contato: glicioo@outlook.com</p>
-</footer>
 </html>
