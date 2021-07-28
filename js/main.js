@@ -51,7 +51,7 @@ function valorValidate(e){
     }
 }
 function nextInput(e){
-    if(e.target.value.length == 2 || e.target.value == "f" || e.target.value == "d"){
+    if(e.target.value.length == 2 || e.target.value.toLowerCase() == "f" || e.target.value.toLowerCase() == "d"){
         valorInput.focus();
     }
 }
@@ -74,7 +74,7 @@ function onFormSubmit(){
 }
 function getFormData(){
     var formData = {};
-    formData["tipo"] = document.getElementById("tipo").value;
+    formData["tipo"] = document.getElementById("tipo").value.toLowerCase();
     formData["valor"] = document.getElementById("valor").value;
     return formData;
 }
@@ -118,7 +118,7 @@ function atualizarResultado(){
 	let ferias_abono_pecuniario = 0;
     let descontos = 0;
     for(let i = 0; i< table.rows.length; i++){
-        switch(table.rows[i].cells[0].innerText){
+        switch(table.rows[i].cells[0].innerText.toLowerCase()){
             case '01':
                 salarios += parseFloat(table.rows[i].cells[1].innerText);
                 break;
