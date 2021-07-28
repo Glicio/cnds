@@ -1,4 +1,4 @@
-let tipos = ["01","10","33","37","43","99","ex","f","d"]
+let tipos = ["01","10","33","37","43","99","ex","f","d","42","45"]
 let tipoInput = document.getElementById("tipo");
 let valorInput = document.getElementById("valor");
 let editando = false;
