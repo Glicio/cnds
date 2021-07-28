@@ -13,6 +13,8 @@ function sleep(ms) {
 async function ativar(item){
     pf.setAttribute("style","display: none;")
     pj.setAttribute("style","display: none;")
+    pf.dataset.ativado = "false";
+    pj.dataset.ativado = "false";
     item = document.getElementById(item)
     if(item.dataset.ativado == "false"){
         item.setAttribute('style', 'display: flex; flex-direction: column;')

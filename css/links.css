@@ -54,13 +54,15 @@ a{
 .btn{
     background-color: rgb(133, 133, 133);
     border: black 1px solid;
-
     align-items: center;
-    padding: 5px 2px;
+    padding: 5px 2px 0px 5px;
     display: flex;
     margin: 5px 5px;
     border-radius: 0.25rem;
     transition: .3s ease;
+}
+.btn span{
+    margin-right: 15px;
 }
 .btn:hover{
     background-color: rgb(253, 255, 210);
