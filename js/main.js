@@ -114,6 +114,8 @@ function atualizarResultado(){
     let outros = 0;
     let extra = 0;
     let faltas = 0;
+	let ferias_indenizadas = 0;
+	let ferias_abono_pecuniario = 0;
     let descontos = 0;
     for(let i = 0; i< table.rows.length; i++){
         switch(table.rows[i].cells[0].innerText){
@@ -121,42 +123,46 @@ function atualizarResultado(){
                 salarios += parseFloat(table.rows[i].cells[1].innerText);
                 break;
             case '10':
-                insalubridade += parseFloat(table.rows[i].cells[1].innerText)
+                insalubridade += parseFloat(table.rows[i].cells[1].innerText);
                 break;
             case '33':
-                gratificacoes += parseFloat(table.rows[i].cells[1].innerText)
+                gratificacoes += parseFloat(table.rows[i].cells[1].innerText);
                 break;
             case '37':
-                quinquenio += parseFloat(table.rows[i].cells[1].innerText)
+                quinquenio += parseFloat(table.rows[i].cells[1].innerText);
                 break;
             case '43':
-                decimo += parseFloat(table.rows[i].cells[1].innerText)
+                decimo += parseFloat(table.rows[i].cells[1].innerText);
                 break;
             case '99':
-                outros += parseFloat(table.rows[i].cells[1].innerText)
+                outros += parseFloat(table.rows[i].cells[1].innerText);
                 break;
             case 'ex':
-                extra += parseFloat(table.rows[i].cells[1].innerText)
+                extra += parseFloat(table.rows[i].cells[1].innerText);
                 break;
-            case 'f':
-                faltas += parseFloat(table.rows[i].cells[1].innerText);
-                salarios -= parseFloat(table.rows[i].cells[1].innerText);
-                if(descontos > faltas){
-                    descontos -= parseFloat(table.rows[i].cells[1].innerText);
-                }
-                break;
+			case '42':
+				ferias_indenizadas += parseFloat(table.rows[i].cells[1].innerText);
+				break;
+			case '44':
+				ferias_abono_pecuniario += parseFloat(table.rows[i].cells[1].innerText);
+				break;
+			case 'f':
+				faltas += parseFloat(table.rows[i].cells[1].innerText)
+				break;
             case 'd':
                 descontos += parseFloat(table.rows[i].cells[1].innerText);
         }
     }
-    let liquidoPago = salarios+insalubridade+extra+gratificacoes+quinquenio+decimo+outros-descontos;
+    let liquidoPago = salarios+insalubridade+extra+gratificacoes+quinquenio+decimo+ferias_abono_pecuniario+ferias_indenizadas+outros-descontos-faltas;
     resultado.rows[0].cells[1].innerText = formatter.format(salarios.toFixed(2));
     resultado.rows[1].cells[1].innerText = formatter.format(insalubridade.toFixed(2)); 
     resultado.rows[2].cells[1].innerText = formatter.format(gratificacoes.toFixed(2)); 
     resultado.rows[3].cells[1].innerText = formatter.format(quinquenio.toFixed(2)); 
     resultado.rows[4].cells[1].innerText = formatter.format(decimo.toFixed(2)); 
-    resultado.rows[5].cells[1].innerText = formatter.format(outros.toFixed(2)); 
-    resultado.rows[6].cells[1].innerText = formatter.format(extra.toFixed(2));
+    resultado.rows[5].cells[1].innerText = formatter.format(ferias_indenizadas.toFixed(2)); 
+    resultado.rows[6].cells[1].innerText = formatter.format(ferias_abono_pecuniario.toFixed(2));
+	resultado.rows[7].cells[1].innerText = formatter.format(outros.toFixed(2));
+	resultado.rows[8].cells[1].innerText = formatter.format(extra.toFixed(2));
     detalhes.rows[0].cells[1].innerText = formatter.format(descontos.toFixed(2));
     detalhes.rows[1].cells[1].innerText = formatter.format(faltas.toFixed(2));
     detalhes.rows[2].cells[1].innerText = formatter.format(liquidoPago.toFixed(2));
