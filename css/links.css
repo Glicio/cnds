@@ -55,7 +55,6 @@ a{
     background-color: rgb(133, 133, 133);
     border: black 1px solid;
     align-items: center;
-    padding: 5px 2px 0px 5px;
     display: flex;
     margin: 5px 5px;
     border-radius: 0.25rem;
@@ -97,7 +96,12 @@ a{
     display: flex;
     flex-direction: column;
 }
-
+.cnd_receita{
+    display: flex;
+}
+.cnd_receita .btn{
+    width: 100%;
+}
 @media (max-width: 900px) {
     .logo{
         display: none;

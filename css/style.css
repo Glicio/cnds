@@ -58,6 +58,13 @@ table,tr{
     margin: 10px;
     
 }
+.header{
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
 
 .list a{
     cursor: pointer;
@@ -104,14 +111,6 @@ table,tr{
 
 .resultado:last-child{
     grid-row: 2/2;
-}
-.header{
-    margin: 0;
-    padding: 5px;
-    background-color: #ccc;
-    color: black;
-    display: flex;
-    align-items: center;
 }
 .icon{
     padding-right: 10px;
