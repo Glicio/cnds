@@ -122,11 +122,20 @@
             <p style="background-color: hsla(360, 78%, 33%, 0.54)">f = Faltas</p>
     </div>
     <div class="desc">
-        <h1>Descrição da Folha</h1>
+        <h3 style="margin: 0;padding: 0;">Histórico</h3>
+        
         <form class="form" action="#" method="#" autocomplete="off" onsubmit="event.preventDefault(); onFormSubmit()">
             
             <div class="form-item">
-                <label for="n_folha">Número da Folha:</label>
+                <label for="tipo_doc">Tipo de documento:</label>
+                <select id="tipo_doc" name="tipo_doc">
+                    <option value="folha">Folha de pagamento</option>
+                    <option value="iaprem">Guia de Recolhimento IAPREM</option>
+                </select>
+            </div>
+
+            <div class="form-item">
+                <label for="n_folha">Número da Folha/Guia:</label>
                 <input type="number" name="n_folha" id="n_folha">
             </div>
 
@@ -136,7 +145,7 @@
             </div>
     
             <div class="form-item">
-                <label for="tipo_func">Tipode de Funcionários:</label>
+                <label for="tipo_func">Tipo de Funcionários:</label>
                 <select id="tipo_func" name="tipo_func">
                     <option value="com">Comissionado</option>
                     <option value="ef">Efetivo</option>

@@ -3,7 +3,7 @@ let tipoInput = document.getElementById("tipo");
 let valorInput = document.getElementById("valor");
 let editando = false;
 
-
+//GERADOR DE HISTORICOS PARA FOLHAS (IMPLEMENTAR IAPREM DPS??)
 document.querySelector('.form').addEventListener('input', (e) => {
     n_folha = document.getElementById("n_folha")
     q_func = document.getElementById("q_func")
@@ -12,6 +12,7 @@ document.querySelector('.form').addEventListener('input', (e) => {
     mes = document.getElementById("mes")
     desc = document.getElementById("desc")
     resultado = document.getElementById("historico_folha")
+    tipo_doc = document.getElementById("tipo_doc")
     /*console.log("Quantidade de Funcionários: "+q_func.value+
     "\nTipo de Funcionários: "+tipo_func.value+
     "\nSecretaria: "+sec.value+
@@ -89,8 +90,13 @@ document.querySelector('.form').addEventListener('input', (e) => {
         }
         
     }
-
-    let result = `FOLHA Nº ${n_folha.value}, REFERENTE A ${q_func.value} FUNCIONÁRIO(S) ${get_tipo_func(tipo_func.value)} ${get_sec(sec.value)}. FOLHA RELATIVA AO MÊS DE ${get_mes(mes.value)} DE 2022${get_desc(desc.value)}`;
+    let result = ""
+    if(tipo_doc.value == "folha"){
+        result = `FOLHA Nº ${n_folha.value}, REFERENTE A ${q_func.value} FUNCIONÁRIO(S) ${get_tipo_func(tipo_func.value)} ${get_sec(sec.value)}. FOLHA RELATIVA AO MÊS DE ${get_mes(mes.value)} DE 2022${get_desc(desc.value)}`;
+    }else{
+        result = `GUIA DE RECOLHIMENTO DO IAPREM Nº ${n_folha.value}, REFERENTE A ${q_func.value} FUNCIONÁRIO(S) ${get_tipo_func(tipo_func.value)} ${get_sec(sec.value)}. GUIA RELATIVA AO MÊS DE ${get_mes(mes.value)} DE 2022${get_desc(desc.value)}`;
+    }
+    
 
     resultado.value = result;
 
