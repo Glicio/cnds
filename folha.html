@@ -9,7 +9,7 @@
         <a href="#"><img src="rsc/check.svg" alt="Logo" width="25" height="25"></a>
         <div class="logo">
             <h1>Links úteis e classificação de folhas</h1>
-            </a>
+
             <p>Contato: glicioo@outlook.com</p>
         </div>
         <div class="links-header">
@@ -121,7 +121,78 @@
             <p style="background-color:hsla(212, 15%, 33%, 0.54)">d = Descontos</p>
             <p style="background-color: hsla(360, 78%, 33%, 0.54)">f = Faltas</p>
     </div>
+    <div class="desc">
+        <h1>Descrição da Folha</h1>
+        <form class="form" action="#" method="#" autocomplete="off" onsubmit="event.preventDefault(); onFormSubmit()">
+            
+            <div class="form-item">
+                <label for="n_folha">Número da Folha:</label>
+                <input type="number" name="n_folha" id="n_folha">
+            </div>
+
+            <div class="form-item">
+                <label for="q_func">Quantidade de Funcionários:</label>
+                <input type="number" name="q_func" id="q_func">
+            </div>
+    
+            <div class="form-item">
+                <label for="tipo_func">Tipode de Funcionários:</label>
+                <select id="tipo_func" name="tipo_func">
+                    <option value="com">Comissionado</option>
+                    <option value="ef">Efetivo</option>
+                    <option value="contr">Contratado</option>
+                    <option value="outro">Outros</option>
+                </select>
+            </div>
+    
+            <div class="form-item">
+                <label for="sec">Secretaria:</label>
+                <select id="sec" name="sec">
+                    <option value="adm">Administração</option>
+                    <option value="fin">Finanças</option>
+                    <option value="agr">Agricultura</option>
+                    <option value="ass">Assistencia</option>
+                    <option value="gab">Gabinete</option>
+                    <option value="edu">Educação</option>
+                    <option value="sau">Saúde</option>
+                    <option value="iaprem">IAPREM</option>
+                </select>
+            </div>
+    
+            <div class="form-item">
+                <label for="mes">Mês:</label>
+                <select id="mes" name="mes">
+                    <option value="jan">Janeiro</option>
+                    <option value="fev">Fevereiro</option>
+                    <option value="mar">Março</option>
+                    <option value="abr">Abril</option>
+                    <option value="mai">Maio</option>
+                    <option value="jun">Junho</option>
+                    <option value="jul">Julho</option>
+                    <option value="ago">Agosto</option>
+                    <option value="set">Setembro</option>
+                    <option value="out">Outubro</option>
+                    <option value="nov">Novembro</option>
+                    <option value="dez">Dezembro</option>
+                </select>
+            </div>
+    
+            <div class="form-item">
+                <label for="desc">Descrição da Folha (OPCIONAL):</label>
+                <input type="text" name="desc" id="desc">
+            </div>
+    
+            <div class="form-item">
+                <label for="historico_folha">Resultado:</label>
+                <textarea name="historico_folha" id="historico_folha" cols="30" rows="10"></textarea>
+            </div>
+    
+    
+    
+        </form>
+    </div>
 </div>
+
 
  <script src="js/main.js"></script>
 </body>

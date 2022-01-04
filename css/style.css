@@ -4,9 +4,7 @@ body{
     margin: 0;
     height: 100vh;
 }
-html{
-    height: auto;
-}
+
 a{
     text-decoration: none;
     color: black;
@@ -24,7 +22,6 @@ a{
 }
 .container{
     display: grid;
-    grid-template-columns: auto auto;
     grid-template-columns: auto auto auto;
     justify-content: center;
 }
@@ -60,12 +57,25 @@ table,tr{
 }
 .header{
     background-color: #ccc;
+    max-height: 15vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 5px;
 }
-
+.header .logo{
+    padding: 0;
+    margin: 0;
+    margin-right: auto;
+    margin-left: 5px;
+}
+.logo h1,p{
+    margin: 0;
+    padding: 0;
+}
+.logo p{
+    font-size: 12px;
+}
 .list a{
     cursor: pointer;
     margin: 0.2rem;
@@ -116,7 +126,6 @@ table,tr{
     padding-right: 10px;
 }
 .header .btn{
-    max-width: 8rem;
     margin: 0 5px;
 }
 .links-header{
@@ -245,6 +254,24 @@ table,tr{
     margin: 0px;
     padding: 5px;
     border: black 1px solid;
+}
+.desc{
+    height: fit-content;
+    background-color: #ccc;
+    border: black 1px solid;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: fit-content;
+    margin-inline: auto;
+    padding: 00.25rem;
+}
+.form-item{
+    display: flex;
+    flex-direction: column;
+    margin-inline: 0.25rem;
 }
 @media (max-width: 600px){
     .header .btn{

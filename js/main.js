@@ -3,6 +3,101 @@ let tipoInput = document.getElementById("tipo");
 let valorInput = document.getElementById("valor");
 let editando = false;
 
+
+document.querySelector('.form').addEventListener('input', (e) => {
+    n_folha = document.getElementById("n_folha")
+    q_func = document.getElementById("q_func")
+    tipo_func = document.getElementById("tipo_func")
+    sec = document.getElementById("sec")
+    mes = document.getElementById("mes")
+    desc = document.getElementById("desc")
+    resultado = document.getElementById("historico_folha")
+    /*console.log("Quantidade de Funcionários: "+q_func.value+
+    "\nTipo de Funcionários: "+tipo_func.value+
+    "\nSecretaria: "+sec.value+
+    "\nMês: "+mes.value+
+    "\nDescrição: "+desc.value)*/
+    const get_tipo_func = (tipo) => {
+        switch(tipo){
+            case "com":
+                return "COMISSIONADO(S)";
+            case "contr":
+                return "CONTRATADO(S)";
+            case "ef":
+                return "EFETIVO(S)";
+            case "outro":
+                return "";
+
+        }
+    }
+
+    const get_sec = (sec) => {
+        switch(sec){
+            case "adm":
+                return "DA SEC. MUNICIPAL DE ADMINISTRAÇÃO"
+            case "fin":
+                return "DA SEC. MUNICIPAL DE FINANÇAS"
+            case "gab":
+                return "DO GABINETE DO PREFEITO"
+            case "ass":
+                return "DA SECRETARIA MUNICIPAL DE ASSISTENCIA SOCIAL"
+            case "agr":
+                return "DA SECRETARIA MUNICIPAL DE AGRICULTURA"
+            case "edu":
+                return "DA SECRETARIA MUNICIPAL DE EDUCAÇÃO"
+            case "sau":
+                return "DA SECRETARIA MUNICIPAL DE SAÚDE"
+            case "iaprem": 
+                return "DO IAPREM"
+        }
+    }
+
+    const get_mes = (mes) => {
+        switch(mes){
+            case "jan":
+                return "JANEIRO";
+            case "fev":
+                return "FEVEREIRO";
+            case "mar":
+                return "MARÇO";
+            case "abr":
+                return "ABRIL";
+            case "mai":
+                return "MAIO";
+            case "jun":
+                return "JUNHO";
+            case "jul":
+                return "JULHO"
+            case "ago":
+                return "AGOSTO"
+            case "set":
+                return "SETEMBRO"
+            case "out":
+                return "OUUBRO"
+            case "nov":
+                return "NOVEMBRO"
+            case "dez":
+                return "DEZEMBRO"
+        }
+    }
+
+    const get_desc = (desc) => {
+        if (desc){
+            return ` - ${desc.toUpperCase()}`
+        }else{
+            return ""
+        }
+        
+    }
+
+    let result = `FOLHA Nº ${n_folha.value}, REFERENTE A ${q_func.value} FUNCIONÁRIO(S) ${get_tipo_func(tipo_func.value)} ${get_sec(sec.value)}. FOLHA RELATIVA AO MÊS DE ${get_mes(mes.value)} DE 2022${get_desc(desc.value)}`;
+
+    resultado.value = result;
+
+
+  });
+
+
 function resetar(){
     location.reload();
     return false;
