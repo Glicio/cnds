@@ -50,6 +50,8 @@ document.querySelector('.form').addEventListener('input', (e) => {
                 return "DA SECRETARIA MUNICIPAL DE SAÚDE"
             case "iaprem": 
                 return "DO IAPREM"
+            case "obr":
+                return "SECRETARIA MUNICIPAL DE OBRAS"
         }
     }
 
