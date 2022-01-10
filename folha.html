@@ -17,6 +17,13 @@
             <a href="/index.html" class="btn"><img src="rsc/certidao.svg" alt="Bransão de Alagoas" width="24" height="24" class="icon"><span>Emitir certidões</span></a>
         </div>
     </nav>
+
+
+    <div class="alert" id="alert">
+        <h3 class="alert-text" id="alert-text">
+            Test
+        </h3>
+    </div>
  <div class="container">
     <div CLASS="menu">
         <form autocomplete="off" onsubmit="event.preventDefault(); onFormSubmit();">
@@ -195,6 +202,10 @@
             <div class="form-item">
                 <label for="historico_folha">Resultado:</label>
                 <textarea name="historico_folha" id="historico_folha" cols="30" rows="10"></textarea>
+            </div>
+
+            <div class="form-item">
+                <input type="button" value="Copiar Histórico" onclick="copyToClipboard()" class="btn">
             </div>
     
     

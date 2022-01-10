@@ -273,6 +273,20 @@ table,tr{
     flex-direction: column;
     margin-inline: 0.25rem;
 }
+
+.alert{
+    position: absolute;
+    background-color: #fff;
+    border: black 1px solid;
+    display: none;
+    padding-inline: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    left: 40%;
+    top: 15vh;
+}
+
 @media (max-width: 600px){
     .header .btn{
         height: 1rem;
@@ -312,6 +326,7 @@ table,tr{
     .btn{
         width: 85vw;
     }
+    
     
 }
 footer{

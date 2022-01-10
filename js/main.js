@@ -3,6 +3,26 @@ let tipoInput = document.getElementById("tipo");
 let valorInput = document.getElementById("valor");
 let editando = false;
 
+
+
+
+const customAlert = (msg) => {
+    let alert = document.getElementById("alert");
+    let text = document.getElementById("alert-text");
+    text.innerHTML = msg;
+    alert.style.display = "flex";
+    setTimeout(() => {
+        alert.style.display = "none";
+    },2000)
+    return "Legal";
+}
+
+const copyToClipboard = () => {
+    let txt = document.getElementById("historico_folha");
+    navigator.clipboard.writeText(txt.value);
+    customAlert("Copiado para área de transferência!<br><br>Use CTRL+V para colar!");
+}
+
 //GERADOR DE HISTORICOS PARA FOLHAS (IMPLEMENTAR IAPREM DPS??)
 document.querySelector('.form').addEventListener('input', (e) => {
     n_folha = document.getElementById("n_folha")
@@ -169,7 +189,7 @@ function onFormSubmit(){
     if(tipos.includes(tipo)){
         insertData(getFormData())
     }else{
-        alert("tipo inválido")
+        customAlert("Tipo inválido")
     }
     tipoInput.focus();
     tipoInput.value = "";
@@ -302,7 +322,7 @@ function onEdit(td){
         editEnviar.addEventListener('click', function(){edit(editEnviar);});
         editando = true;
     }else{
-        alert("Você já está editando outro valor!")
+        customAlert("Você já está editando outro valor!")
     }
 }
 function onRemove(row){
