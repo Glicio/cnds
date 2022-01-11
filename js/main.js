@@ -384,6 +384,7 @@ const imprimirCapa = () =>{
         sessionStorage.setItem(item,data[item])
     }
     //
-    window.location.href = "/capa.html";
+    //window.location.href = "/capa.html";
+    window.open("/capa.html", '_blank').focus();
     console.log("redirecionado...");
 }
