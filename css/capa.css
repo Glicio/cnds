@@ -1,0 +1,64 @@
+
+body{
+    width: fit-content;
+}
+p{
+    margin: 0;
+    padding: 0;
+}
+.cab-item{
+    font-size: 10px; margin-bottom: 5px; padding: 0;
+    font-weight: bold;
+}
+.container{
+    display: flex;
+    border-block: 1px black solid;
+    padding: 3px 2px;
+    align-items: center;
+    justify-content: center;
+
+    margin-block: 2px;
+}
+.divisoria{
+    margin-inline: 0.25rem;
+    background-color: black;
+    height: 4vh;
+    width: 1px;
+    content: " ";
+}
+.underline{
+    border-bottom: black 1px solid;
+    width: 100%;
+}
+.folha-desc{
+    font-size: 13px;
+}
+.dt-titulo{
+    font-size: 10px;
+    border: 1px black solid;
+}
+.dt-valor{
+    letter-spacing: 2px;
+    border: 1px black solid;
+    border-top: none;
+    padding: 2px;
+}
+.dotacao{
+    margin-inline: 1px;
+    width: 100%;
+}
+.dt-valor, .dt-titulo{
+    padding-inline: 2px;
+}
+.empenhos{
+    display: block;
+}
+table{
+    width: 100%;
+    font-size: 12px;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding-inline: 5px;
+  }

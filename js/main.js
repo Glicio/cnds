@@ -3,7 +3,7 @@ let tipoInput = document.getElementById("tipo");
 let valorInput = document.getElementById("valor");
 let editando = false;
 
-
+var data = []
 
 
 const customAlert = (msg) => {
@@ -289,6 +289,17 @@ function atualizarResultado(){
     detalhes.rows[0].cells[1].innerText = formatter.format(descontos.toFixed(2));
     detalhes.rows[1].cells[1].innerText = formatter.format(faltas.toFixed(2));
     detalhes.rows[2].cells[1].innerText = formatter.format(liquidoPago.toFixed(2));
+    data = {
+        "01":formatter.format(salarios.toFixed(2)),
+        "10":formatter.format(insalubridade.toFixed(2)),
+        "33":formatter.format(gratificacoes.toFixed(2)),
+        "37":formatter.format(quinquenio.toFixed(2)),
+        "43":formatter.format(decimo.toFixed(2)),
+        "42":formatter.format(ferias_indenizadas.toFixed(2)),
+        "44":formatter.format(ferias_abono_pecuniario.toFixed(2)),
+        "99":formatter.format(outros.toFixed(2)),
+        "f":formatter.format(faltas.toFixed(2)),
+    }
 }
 
 function edit(row){
@@ -364,3 +375,15 @@ function sortTable() {
       }
     }
   }
+
+const imprimirCapa = () =>{
+    sessionStorage.clear()
+    data["historico"] = String(document.getElementById("historico_folha").value);
+    for(item in data){
+        console.log(`[${item}:${data[item]}]`);
+        sessionStorage.setItem(item,data[item])
+    }
+    //
+    window.location.href = "/capa.html";
+    console.log("redirecionado...");
+}
