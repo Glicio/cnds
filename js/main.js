@@ -20,6 +20,7 @@ const customAlert = (msg) => {
 const copyToClipboard = () => {
     let txt = document.getElementById("historico_folha");
     navigator.clipboard.writeText(txt.value);
+    document.getElementById("n_foha").focus();
     customAlert("Copiado para área de transferência!<br><br>Use CTRL+V para colar!");
 }
 

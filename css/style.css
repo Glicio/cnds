@@ -245,10 +245,16 @@ table,tr{
     opacity: 1;
 }
 .ajuda{
+    position: absolute;
+    display: none;
     height: fit-content;
     background-color: #ccc;
     border: black 1px solid;
     margin: 10px;
+}
+.detalhes:hover > .ajuda{
+    display: block;
+    left: 65%;
 }
 .ajuda p {
     margin: 0px;
