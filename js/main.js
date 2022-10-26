@@ -99,7 +99,7 @@ document.querySelector('.form').addEventListener('input', (e) => {
             case "set":
                 return "SETEMBRO"
             case "out":
-                return "OUUBRO"
+                return "OUTUBRO"
             case "nov":
                 return "NOVEMBRO"
             case "dez":
