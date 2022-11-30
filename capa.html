@@ -8,11 +8,11 @@
     <title>Capa de Folha</title>
 </head>
 <body>
-    <div class="container" id="cab1">
+    <div class="container" id="cab1" style="justify-content: space-evenly;">
         <div class="item">
             <p class="cab-item">PROTOCOLO:</p>
             <div style="display: flex;">
-                <p>Nº.:_____________/________</p><p>EM:____/____/________</p>
+                <p>Nº.:_____________/<div id="anoProtocolo" style="margin-right: .5rem;"></div></p><p id="dataProtocolo">EM:____/____/________</p>
             </div>
         </div>
 
@@ -20,7 +20,7 @@
 
         <div class="item">
             <p class="cab-item">ÓRGÃO:</p>
-            <p>________________________</p>
+            <p id="orgao">________________________</p>
         </div>
 
         <div class="divisoria"></div>
@@ -29,7 +29,9 @@
             <p class="cab-item">
                 EXERCÍCIO FINANCEIRO:
             </p>
-            <p>________________________</p>
+            <div style="display: flex; justify-content: center;">    
+                <p id="anoExercicio">________________________</p>
+            </div>
         </div>
     </div>
     <div class="container">
@@ -46,18 +48,18 @@
     <div class="container">
         <div class="dotacao">
             <div class="dt-titulo">FUNCIONAL PROGROMÁTICA</div>
-            <div class="dt-valor">__|__|__|___|____|____</div>
+            <div class="dt-valor" id="funcProg">__|__|__|___|____|____</div>
         </div>
         <div class="dotacao">
             <div class="dt-titulo">NATUREZA DA DESPESA</div>
-            <div class="dt-valor">__|__|__</div>
+            <div class="dt-valor" id="naturezaDespesa">__|__|__</div>
         </div>
-        <div class="dotacao">
+        <div class="dotacao" style="width: 15rem;">
             <div class="dt-titulo">
                 FONTE DE RECURSO
             </div>
             <div class="dt-valor">
-                ____
+                ____.____
             </div>
         </div>
     </div>

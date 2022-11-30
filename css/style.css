@@ -254,7 +254,7 @@ table,tr{
 }
 .detalhes:hover > .ajuda{
     display: block;
-    left: 65%;
+    left: 0;
 }
 .ajuda p {
     margin: 0px;

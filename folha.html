@@ -133,7 +133,10 @@
         <h3 style="margin: 0;padding: 0;">Histórico</h3>
         
         <form class="form" action="#" method="#" autocomplete="off" onsubmit="event.preventDefault(); onFormSubmit()">
-            
+            <div class="form-item">
+                <label for="data">Data</label>
+                <input type="date" name="data" id="dataProtocolo">
+            </div>
             <div class="form-item">
                 <label for="tipo_doc">Tipo de documento:</label>
                 <select id="tipo_doc" name="tipo_doc">
@@ -204,12 +207,12 @@
                 <label for="historico_folha">Resultado:</label>
                 <textarea name="historico_folha" id="historico_folha" cols="30" rows="10"></textarea>
             </div>
-
+            
             <div class="form-item">
                 <input type="button" value="Copiar Histórico" onclick="copyToClipboard()" class="btn">
                 <input type="button" value="Imprimir Capa (WIP)" onclick="imprimirCapa()" class="btn">
             </div>
-    
+            
     
     
         </form>
