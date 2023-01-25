@@ -117,7 +117,7 @@ document.querySelector('.form').addEventListener('input', (e) => {
     }
     let result = ""
     if(tipo_doc.value == "folha"){
-        result = `FOLHA Nº ${n_folha.value}, REFERENTE A ${q_func.value} FUNCIONÁRIO(S) ${get_tipo_func(tipo_func.value)} ${get_sec(sec.value)}. FOLHA RELATIVA AO MÊS DE ${get_mes(mes.value)} DE 2022${get_desc(desc.value)}`;
+        result = `FOLHA Nº ${n_folha.value}, REFERENTE A ${q_func.value} FUNCIONÁRIO(S) ${get_tipo_func(tipo_func.value)} ${get_sec(sec.value)}. FOLHA RELATIVA AO MÊS DE ${get_mes(mes.value)} DE 2023${get_desc(desc.value)}`;
     }else{
         result = `GUIA DE RECOLHIMENTO DO IAPREM Nº ${n_folha.value}, REFERENTE A ${q_func.value} FUNCIONÁRIO(S) ${get_tipo_func(tipo_func.value)} ${get_sec(sec.value)}. GUIA RELATIVA AO MÊS DE ${get_mes(mes.value)} DE 2023${get_desc(desc.value)}`;
     }
